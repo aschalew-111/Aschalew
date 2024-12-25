@@ -1,37 +1,44 @@
-// Smooth Scrolling for Internal Links
+// Smooth Scrolling
 document.querySelectorAll('a[href]').forEach(link => {
     link.addEventListener('click', function (e) {
-        if (this.getAttribute('href').startsWith('#')) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href').substring(1);
-            const targetElement = document.getElementById(targetId);
-
+        e.preventDefault();
+        const targetId = this.getAttribute('href').split('.')[0];
+        const targetElement = document.querySelector(`[name="${targetId}"]`);
+        if (targetElement) {
             window.scrollTo({
-                top: targetElement.offsetTop - 50,
+                top: targetElement.offsetTop,
                 behavior: 'smooth'
             });
         }
     });
 });
 
-// Dynamic Project Cards Rendering
-const projectsContainer = document.querySelector('.grid');
-if (projectsContainer) {
-    const projects = [
-        { title: 'Portfolio Website', description: 'A personal website showcasing my skills and projects.' },
-        { title: 'Online Store', description: 'Developed a full-featured e-commerce website.' },
-        { title: 'Network Management Tool', description: 'Created a tool for managing and monitoring network performance.' },
-        { title: 'Online Shopping System', description: 'A dynamic shopping system with user-friendly interfaces.' },
-        { title: 'Lounge Management System', description: 'A system to manage lounges and customer bookings effectively.' }
-    ];
+// Dynamic Greeting Based on Time
+window.addEventListener('DOMContentLoaded', () => {
+    const header = document.querySelector('header h1');
+    const hour = new Date().getHours();
+    let greeting = "Welcome";
 
-    projects.forEach(project => {
-        const projectCard = document.createElement('div');
-        projectCard.classList.add('card');
-        projectCard.innerHTML = `
-            <h3>${project.title}</h3>
-            <p>${project.description}</p>
-        `;
-        projectsContainer.appendChild(projectCard);
+    if (hour < 12) {
+        greeting = "Good Morning";
+    } else if (hour < 18) {
+        greeting = "Good Afternoon";
+    } else {
+        greeting = "Good Evening";
+    }
+
+    header.textContent = `${greeting}, I’m Aschalew Teshome!`;
+});
+
+// Button Hover Animation (Optional)
+document.querySelectorAll('nav ul li a').forEach(link => {
+    link.addEventListener('mouseover', () => {
+        link.style.backgroundColor = "#e67e22";
+        link.style.color = "#fff";
     });
-}
+
+    link.addEventListener('mouseout', () => {
+        link.style.backgroundColor = "transparent";
+        link.style.color = "#fff";
+    });
+});
