@@ -4,40 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About - Aschalew Teshome</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <div class="container">
             <h1>About Me</h1>
+            <p class="greeting"></p>
             <nav>
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
+                    <li><a href="about.html" class="active">About</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <section>
-        <div class="container">
-            <h2>About Me</h2>
-            <p>I am an IT Specialist and Website Developer with expertise in creating efficient and user-friendly solutions. My passion for technology drives me to continually improve and learn new skills.</p>
-            <h3>Skills</h3>
-            <ul>
-                <li>HTML, CSS, JavaScript</li>
-                <li>Python, Java, C#, Django, Node.js</li>
-                <li>React, Angular, Vue.js</li>
-                <li>SQL, NoSQL Databases</li>
-                <li>Network Security, System Administration</li>
-                <li>Cybersecurity & Disaster Recovery Analyst</li>
-            </ul>
-        </div>
-    </section>
+    <main>
+        <section>
+            <div class="container">
+                <h2>About Me</h2>
+                <p>I am an IT Specialist and Website Developer with expertise in creating efficient and user-friendly solutions.</p>
+                <h3>Skills</h3>
+                <div class="grid">
+                    <div class="grid-item"><p><strong>Frontend:</strong> HTML, CSS, JavaScript</p></div>
+                    <div class="grid-item"><p><strong>Backend:</strong> Python, Java, C#, Django, Node.js</p></div>
+                    <div class="grid-item"><p><strong>Frameworks:</strong> React, Angular, Vue.js</p></div>
+                    <div class="grid-item"><p><strong>Databases:</strong> SQL, NoSQL</p></div>
+                    <div class="grid-item"><p><strong>Systems:</strong> Network Security, System Administration</p></div>
+                    <div class="grid-item"><p><strong>Specialties:</strong> Cybersecurity, Disaster Recovery</p></div>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <footer>
         <p>© 2024 Aschalew Teshome</p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
